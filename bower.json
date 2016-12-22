@@ -1,0 +1,25 @@
+{
+  "name": "chat_ang_fireb",
+  "description": "Chat Angular Firebase",
+  "main": "index.js",
+  "authors": [
+    "Sergey Stelmakh <stelmakhserg@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular",
+    "Firebase"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "firebase": "^3.6.4"
+  }
+}
