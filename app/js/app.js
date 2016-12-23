@@ -14,4 +14,4 @@ var config = {
 firebase.initializeApp(config);
 
 angular
-    .module('afbChat', []);
+    .module('afbChat', ['firebase']);

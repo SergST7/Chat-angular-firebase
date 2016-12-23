@@ -4,9 +4,20 @@
 
 angular
     .module('afbChat')
-    .controller('chatCtrl',  function () {
+    .controller('chatCtrl',['ChatService',  function (ChatService) {
         var self = this;
-
-        self.test='Hello world!'
         
-    })
+        self.messages = ChatService.getMessages()
+
+        self.sendMessage = function () {
+            var message = {
+                text: self.newMessage
+            };
+
+            ChatService.sendMessage(message);
+
+            self.newMessage = ''
+
+        }
+
+    }])

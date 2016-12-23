@@ -9,8 +9,6 @@ var gulp = require('gulp'),
 
 
 
-
-
 //server
 gulp.task('start', function() {
     gulp.src('app')
@@ -19,7 +17,6 @@ gulp.task('start', function() {
             open: true
         }));
 });
-
 
 
 gulp.task('style', function () {
