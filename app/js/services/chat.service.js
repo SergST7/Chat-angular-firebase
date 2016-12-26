@@ -11,6 +11,10 @@ function chatService($firebaseArray) {
             return $firebaseArray(messagesRef)
         },
 
+        showLimitMessages: function () {
+            return $firebaseArray(messagesRef.limitToLast(5))
+        },
+
         sendMessage: function(message) {
             this.getMessages().$add(message)
 

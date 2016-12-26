@@ -29,7 +29,7 @@
 		</div>
 		<div class="chat-body">
 			<ul class="messages">
-				<li class="massage massage--mine" ng-repeat="message in chat.messages">
+				<li class="massage massage--mine" ng-repeat="message in chat.limitMessages">
 					<img src="" alt="">
 					<span class="massage__author">SergST</span>
 					<p class="massage__text">
@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="chat-footer">
-			<textarea  rows="5" ng-model="chat.newMessage"></textarea>
+			<textarea enter-key="chat.sendMessage()" rows="5" ng-model="chat.newMessage"></textarea>
 			<button class="btn btn-green" ng-click="chat.sendMessage()">Send</button>
 
 		</div>
@@ -59,6 +59,7 @@
 <script src="js/app.js"></script>
 <script src="js/controllers/chat.controller.js"></script>
 <script src="js/services/chat.service.js"></script>
+<script src="js/directives/enter-key.directive.js"></script>
 <!-- endbuild -->
 
 </body>
