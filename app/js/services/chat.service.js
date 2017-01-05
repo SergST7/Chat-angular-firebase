@@ -17,7 +17,6 @@ function chatService($firebaseArray) {
 
         sendMessage: function(message) {
             this.getMessages().$add(message)
-
         }
     }
 
