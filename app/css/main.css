@@ -55,7 +55,8 @@ table {
   -webkit-transition: all .3s;
   transition: all .3s;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  vertical-align: top; }
   .btn:hover {
     -webkit-box-shadow: 0 0px 10px -4px #000;
     box-shadow: 0 0px 10px -4px #000; }

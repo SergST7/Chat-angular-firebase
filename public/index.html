@@ -4,43 +4,42 @@
 	<meta charset="UTF-8">
 	<title>Title</title>
 
-	
-
 	<link rel="stylesheet" href="css/main.min.css">
 
 </head>
 <body>
 
 <section class="chat-page" ng-controller="chatCtrl as chat">
+
 	<div class="chat-window">
 		<div class="chat-header">
 			<div class="chat-header__author">
-				SergST
+				{{chat.author.displayName}}
 			</div>
 			<div class="chat-header__btns">
-				<button class="btn btn-green">Login</button>
+				<button ng-if="!chat.author" class="btn btn-green" ng-click="chat.login()">Login</button>
+				<button ng-if="chat.author" class="btn btn-red" ng-click="chat.logout()">Logout</button>
 			</div>
 
 		</div>
 		<div class="chat-body">
 			<ul class="messages">
-				<li class="massage">
-					<img src="" alt="">
-					<span class="massage__author">SergST</span>
+				<li class="massage" ng-class="{ 'massage--mine': message.authorId == chat.author.uid }" ng-repeat="message in chat.limitMessages">
+					<img class="massage__photo" ng-src="{{message.photo}}" alt="">
+					<span class="massage__author">{{message.authorName}}</span>
 					<p class="massage__text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, quaerat.
+						{{message.text}}
 					</p>
 				</li>
 			</ul>
 		</div>
 
 		<div class="chat-footer">
-			<textarea  rows="5"></textarea>
-			<button class="btn btn-green">Send</button>
+			<textarea enter-key="chat.sendMessage()" rows="5" ng-model="chat.newMessage"></textarea>
+			<button class="btn btn-green" ng-click="chat.sendMessage()">Send</button>
 
 		</div>
 	</div>
-	<h1>{{chat.test}}</h1>
 </section>
 
 
